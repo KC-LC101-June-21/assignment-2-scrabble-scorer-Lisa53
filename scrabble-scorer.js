@@ -83,7 +83,8 @@ const scrabbleScoreObj = {
 
 let scrabbleScore;
 
-const scoringAlgorithms = [];
+const scoringAlgorithms = [simpleScoreObj, vowelBonusScoreObj, scrabbleScoreObj];
+
 
 function scorerPrompt() {}
 
