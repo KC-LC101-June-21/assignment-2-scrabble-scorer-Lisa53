@@ -31,15 +31,32 @@ function oldScrabbleScorer(word) {
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
+
+let letterPoints = '';
 let wordToScore = '';
 
 function initialPrompt() {
-   console.log("Let's play some scrabble!\n");
+   console.log("\nLet's play some scrabble!\n");
   wordToScore = input.question('Enter a word to score: ');
-  console.log(wordToScore);
+  console.log(oldScrabbleScorer(wordToScore));
 };
 
+
 let simpleScore; 
+
+const simpleScoreStructure = {
+  1: ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
+};
+
+function simpleScore(word) {
+  word = word.toUpperCase
+  for (let i = 0; i < word.length; i++){
+    for (pointValue in simpleScoreStructure) {
+      letterPoints += `Points for '${word[i]}': ${pointValue} \n`
+    }
+  }
+  return letterPoints;
+}
 
 let vowelBonusScore;
 
