@@ -35,34 +35,17 @@ function oldScrabbleScorer(word) {
 
 let wordToScore = '';
 
- 
 
-const simpleScoreStructure = {
-  1: ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ]
-};
-
-let simpleScore = function(word) {
-  word = word.toUpperCase();
-  let letterPoints = '';
-  for (let i = 0; i < word.length; i++){
-
-    for (pointValue in simpleScoreStructure) {
-
-      if (simpleScoreStructure[pointValue].includes(word[i]));
-
-      letterPoints += `Points for '${word[i]}': ${pointValue} \n`
-    }
-  }
-  return letterPoints;
-};
 
 function initialPrompt() {
    console.log("\nLet's play some scrabble!\n");
   wordToScore = input.question('Enter a word to score: ');
-  console.log(oldScrabbleScorer(wordToScore));
+  console.log(simpleScore(wordToScore));
 };
 
-
+let simpleScore = function(word) {
+  return word.length;
+};
 
 
 let vowelBonusScore;
