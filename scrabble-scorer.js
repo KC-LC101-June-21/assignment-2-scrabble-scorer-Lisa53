@@ -62,7 +62,7 @@ let vowelBonusScore = function(word) {
   return letterPoints;
 };
 
-const simpeScoreObj = {
+const simpleScoreObj = {
   name: 'Simple Score',
   description: 'Each letter is worth 1 point.',
   scoreFunction: function () {simpleScore()},
@@ -83,7 +83,7 @@ const scrabbleScoreObj = {
 
 let scrabbleScore;
 
-const scoringAlgorithms = [];
+const scoringAlgorithms = [simpleScoreObj, vowelBonusScoreObj, scrabbleScoreObj];
 
 function scorerPrompt() {}
 
