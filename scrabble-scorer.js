@@ -40,7 +40,7 @@ let wordToScore = '';
 function initialPrompt() {
    console.log("\nLet's play some scrabble!\n");
   wordToScore = input.question('Enter a word to score: ');
-  console.log(simpleScore(wordToScore));
+  console.log(vowelBonusScore(wordToScore));
 };
 
 let simpleScore = function(word) {
@@ -48,7 +48,19 @@ let simpleScore = function(word) {
 };
 
 
-let vowelBonusScore;
+let vowelBonusScore = function(word) {
+  word = word.toUpperCase();
+  let letterPoints = 0;
+  //let vowels = ['A', 'E', 'I', 'O', 'U'];
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === ('A' || 'E' || 'I'|| 'O'|| 'U')) {
+      letterPoints += 3;
+    } else {
+      letterPoints += 1;
+    }
+  }
+  return letterPoints;
+};
 
 let scrabbleScore;
 
