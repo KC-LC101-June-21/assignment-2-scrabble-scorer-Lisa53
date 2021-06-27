@@ -137,17 +137,12 @@ let newPointStructure = {
   z: 10,
 };
 
-console.log("Scrabble scoring values for");
-console.log("letter a: ", newPointStructure.a);
-console.log("letter j: ", newPointStructure.j);
-console.log("letter z: ", newPointStructure["z"]);
-
 function runProgram() {
    let word = initialPrompt();
    let scorer = scorerPrompt();
-   console.log(`scorer: ${scorer}`)
-   console.log(`word: ${word}`)
-   console.log(scrabbleScore(scorer, word));
+  //  console.log(`scorer: ${scorer}`)
+  //  console.log(`word: ${word}`)
+      scrabbleScore(scorer, word);
    
 }
 
