@@ -40,7 +40,10 @@ let wordToScore = '';
 function initialPrompt() {
    console.log("\nLet's play some scrabble!\n");
   wordToScore = input.question('Enter a word to score: ');
-  console.log(vowelBonusScore(wordToScore));
+  //console.log(vowelBonusScore(wordToScore));
+  console.log('\nWhich scoring algorithm would you like to use?\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\n');
+  let scoreChoice = input.question(`Enter 0, 1, or 2: `);
+console.log(scoreChoice);
 };
 
 let simpleScore = function(word) {
