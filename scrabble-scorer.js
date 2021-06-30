@@ -106,13 +106,18 @@ function scorerPrompt() {
 
 
 function transform(oldPointStructure) {
- 
-	for (const pointValue in oldPointStructure) {
- 
-		 if (oldPointStructure[pointValue].includes(word[i])) {
-
+  let newObject = {};
+  for (label in oldPointStructure) {
+    //console.log(label);
+    //console.log(oldPointStructure[label]);
+    for(let i=0; i < oldPointStructure[label].length; i++) {
+    //console.log(oldPointStructure[label][i]);
+    newObject[oldPointStructure[label][i].toLowerCase()] = label
+    }
   }
-};
+  return newObject;
+}
+  console.log(transform(oldPointStructure));
 
 let newPointStructure;
 
